@@ -1,7 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
+
+// Enable the application handle JSON data.
+app.use(bodyParser.json());
+app.use(authRoutes);
 
 const mongoUri =
   "mongodb+srv://lucas:teste123@cluster0-ax3gp.mongodb.net/test?retryWrites=true&w=majority";
@@ -18,7 +25,7 @@ mongoose.connection.on("error", () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hi, There!");
+  res.send("Hi, There!!");
 });
 
 app.listen(3000, () => {
