@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
+require("./models/User");
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
