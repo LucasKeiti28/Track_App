@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 require("./models/User");
+require("./models/Track");
 const authRoutes = require("./routes/authRoutes");
+const trackRoutes = require("./routes/trackRoutes");
 const requireAuth = require("./middlewares/requireAuth");
 
 const app = express();
@@ -11,6 +13,7 @@ const app = express();
 // Enable the application handle JSON data.
 app.use(bodyParser.json());
 app.use(authRoutes);
+app.use(trackRoutes);
 
 const mongoUri =
   "mongodb+srv://lucas:teste123@cluster0-ax3gp.mongodb.net/test?retryWrites=true&w=majority";
