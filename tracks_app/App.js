@@ -11,23 +11,30 @@ import SignUp from "./src/pages/SignUp";
 import TrackCreate from "./src/pages/TrackCreate";
 import TrackList from "./src/pages/TrackList";
 import TrackDetail from "./src/pages/TrackDetail";
+import Initial from "./src/pages/Initial";
 
 import { Provider as AuthProvider } from "./src/context/AuthContext";
 
-const switchNavigator = createSwitchNavigator({
-  loginFlow: createStackNavigator({
-    SignUp,
-    SignIn
-  }),
-  mainFlow: createBottomTabNavigator({
-    trackListFlow: createStackNavigator({
-      TrackList,
-      TrackDetail
+const switchNavigator = createSwitchNavigator(
+  {
+    Initial,
+    loginFlow: createStackNavigator({
+      SignUp,
+      SignIn
     }),
-    TrackCreate,
-    Account
-  })
-});
+    mainFlow: createBottomTabNavigator({
+      trackListFlow: createStackNavigator({
+        TrackList,
+        TrackDetail
+      }),
+      TrackCreate,
+      Account
+    })
+  },
+  {
+    initialRouteName: "Initial"
+  }
+);
 
 const App = createAppContainer(switchNavigator);
 
