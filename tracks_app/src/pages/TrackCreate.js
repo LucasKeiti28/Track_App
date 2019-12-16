@@ -1,3 +1,4 @@
+import "../_mockLocation";
 import React, { useEffect, useState, useContext } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Text } from "react-native-elements";
@@ -8,7 +9,6 @@ import {
 } from "expo-location";
 
 import Map from "../components/Map";
-import "../_mockLocation";
 
 import { Context as LocationContext } from "../context/LocationContext";
 
