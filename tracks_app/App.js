@@ -14,6 +14,7 @@ import TrackDetail from "./src/pages/TrackDetail";
 import Initial from "./src/pages/Initial";
 
 import { Provider as AuthProvider } from "./src/context/AuthContext";
+import { Provider as LocationProvider } from "./src/context/LocationContext";
 
 const switchNavigator = createSwitchNavigator(
   {
@@ -40,8 +41,10 @@ const App = createAppContainer(switchNavigator);
 
 export default () => {
   return (
-    <AuthProvider>
-      <App ref={navigator => setNavigator(navigator)} />
-    </AuthProvider>
+    <LocationProvider>
+      <AuthProvider>
+        <App ref={navigator => setNavigator(navigator)} />
+      </AuthProvider>
+    </LocationProvider>
   );
 };
