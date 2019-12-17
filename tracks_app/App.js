@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 
 import { setNavigator } from "./src/navigationRef";
 
-import Account from "./src/pages/Account";
+import Accountt from "./src/pages/Account";
 import SignIn from "./src/pages/SignIn";
 import SignUp from "./src/pages/SignUp";
 import TrackCreate from "./src/pages/TrackCreate";
@@ -29,7 +29,7 @@ const switchNavigator = createSwitchNavigator(
         TrackDetail
       }),
       TrackCreate,
-      Account
+      Accountt
     })
   },
   {
